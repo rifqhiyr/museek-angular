@@ -1,1 +1,47 @@
-<p>about works!</p>
+<div class="container">
+  <div
+    class="jumbotron bg-transparent mt-2 mb-3 shadow-sm text-center text-capitalize"
+  >
+    <h1 class="display-4">What We do?</h1>
+    <p class="lead">
+      This is a simple hero unit, a simple jumbotron-style component for calling
+      extra attention to featured content or information.
+    </p>
+    <hr class="my-4" />
+    <p>
+      It uses utility classes for typography and spacing to space content out
+      within the larger container.
+    </p>
+    <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
+  </div>
+  <div class="text-center p-4">
+    <h1>Meet our team</h1>
+  </div>
+
+  <div class="row row-cols-1 row-cols-md-2 mt-2 mb-4 text-center">
+    <a
+      href="/"
+      class="card text-decoration-none"
+      *ngFor="let profile of profiles"
+    >
+      <div class="row">
+        <div class="col-md-4">
+          <img src="{{ profile.imageProfile }}" class="card-img" alt="..." />
+        </div>
+        <div class="col-md-8">
+          <div class="card-body" style="color: black;">
+            <h5 class="card-title">{{ profile.name }}</h5>
+
+            <p class="card-text">
+              {{ profile.desc }}
+            </p>
+
+            <p class="card-text">
+              <small class="text-muted">{{ profile.jobdesk }}</small>
+            </p>
+          </div>
+        </div>
+      </div>
+    </a>
+  </div>
+</div>

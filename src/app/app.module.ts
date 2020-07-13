@@ -5,8 +5,10 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
 import { HomepageComponent } from './components/homepage/homepage.component';
 import { AboutComponent } from './components/about/about.component';
-import { MusicianListComponent } from './components/musician-list/musician-list.component';
-import { MusicianComponent } from './components/musician-list/musician/musician.component';
+import { MusiciansComponent } from './components/musicians/musicians.component';
+import { MusicianListComponent } from './components/musicians/musician-list/musician-list.component';
+import { MusicianComponent } from './components/musicians/musician-list/musician/musician.component';
+import { FooterComponent } from './components/footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -16,6 +18,8 @@ import { MusicianComponent } from './components/musician-list/musician/musician.
     AboutComponent,
     MusicianListComponent,
     MusicianComponent,
+    MusiciansComponent,
+    FooterComponent,
   ],
   imports: [BrowserModule],
   providers: [],
