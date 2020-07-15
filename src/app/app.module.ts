@@ -4,7 +4,6 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
 import { HomepageComponent } from './components/homepage/homepage.component';
-import { AboutComponent } from './components/about/about.component';
 import { MusiciansComponent } from './components/musicians/musicians.component';
 import { MusicianListComponent } from './components/musicians/musician-list/musician-list.component';
 import { MusicianComponent } from './components/musicians/musician-list/musician/musician.component';
@@ -15,7 +14,6 @@ import { FooterComponent } from './components/footer/footer.component';
     AppComponent,
     HeaderComponent,
     HomepageComponent,
-    AboutComponent,
     MusicianListComponent,
     MusicianComponent,
     MusiciansComponent,

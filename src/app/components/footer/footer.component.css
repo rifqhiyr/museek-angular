@@ -1,0 +1,13 @@
+.container-fluid {
+  background-color: whitesmoke;
+  padding-top: 2.5rem;
+}
+
+a {
+  color: black;
+  font-weight: bold;
+}
+
+a:hover {
+  color: darkblue;
+}
