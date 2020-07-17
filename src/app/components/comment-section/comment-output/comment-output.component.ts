@@ -6,7 +6,12 @@ import { Component, OnInit, Input } from '@angular/core';
   styleUrls: ['./comment-output.component.css'],
 })
 export class CommentOutputComponent implements OnInit {
+  like = false;
   @Input('commentOutput') comment: { userComment: string };
+
+  onClick() {
+    this.like = !this.like;
+  }
 
   constructor() {}
 

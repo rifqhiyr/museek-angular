@@ -10,7 +10,13 @@
     {{ comment.userComment }}
 
     <div class="d-flex justify-content-end">
-      <a class="badge mr-2" role="button"><i class="fa fa-heart"></i>4</a>
+      <div class="badge mr-2" role="button">
+        <i
+          (click)="onClick()"
+          [ngStyle]="{ color: like === true ? 'red' : 'grey' }"
+          class="fa fa-heart"
+        ></i>
+      </div>
       <a
         class="badge badge-light"
         role="button"
@@ -19,7 +25,7 @@
         aria-expanded="false"
         aria-controls="collapseExample"
       >
-        view reply <span class="fa fa-caret-down"></span>
+        reply <span class="fa fa-caret-down"></span>
       </a>
     </div>
 
@@ -33,7 +39,7 @@
         />
       </a>
       <div class="media-body">
-        <h5 class="mt-0">Media heading</h5>
+        <h5 class="mt-0">Jhon Doe</h5>
         Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque
         ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus
         viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla.

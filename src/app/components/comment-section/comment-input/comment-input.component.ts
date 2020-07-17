@@ -15,6 +15,7 @@ import {
 export class CommentInputComponent implements OnInit {
   empty: string;
   @Output() commentSubmited = new EventEmitter<{ userComment: string }>();
+
   @ViewChild('commentInput') commentInput: ElementRef;
 
   constructor() {}

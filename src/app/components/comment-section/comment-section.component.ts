@@ -7,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CommentSectionComponent implements OnInit {
   comments = [{ userComment: 'hi this is from indonesia' }];
+  likes = [];
 
   constructor() {}
 
@@ -15,6 +16,11 @@ export class CommentSectionComponent implements OnInit {
   onCommentSubmit(commentData: { userComment: string }) {
     this.comments.push({
       userComment: commentData.userComment,
+    });
+  }
+  onLikeAdd(likeData: { like: any }) {
+    this.likes.push({
+      like: likeData.like,
     });
   }
 }
