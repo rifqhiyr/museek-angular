@@ -1,12 +1,12 @@
 import { Component, OnInit } from '@angular/core';
-import { Musician } from '../musician.model';
+import { Musician } from './musician.model';
 
 @Component({
-  selector: 'app-musician-list',
-  templateUrl: './musician-list.component.html',
-  styleUrls: ['./musician-list.component.css'],
+  selector: 'app-musician',
+  templateUrl: './musician.component.html',
+  styleUrls: ['./musician.component.css'],
 })
-export class MusicianListComponent implements OnInit {
+export class MusicianComponent implements OnInit {
   musicians: Musician[] = [
     new Musician(
       'Metalica',

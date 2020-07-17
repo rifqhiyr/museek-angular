@@ -1,13 +1,16 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
 import { HomepageComponent } from './components/homepage/homepage.component';
-import { MusiciansComponent } from './components/musicians/musicians.component';
-import { MusicianListComponent } from './components/musicians/musician-list/musician-list.component';
-import { MusicianComponent } from './components/musicians/musician-list/musician/musician.component';
+import { MusicianListComponent } from './components/musician-list/musician-list.component';
+import { MusicianComponent } from './components/musician-list/musician/musician.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { CommentSectionComponent } from './components/comment-section/comment-section.component';
+import { CommentOutputComponent } from './components/comment-section/comment-output/comment-output.component';
+import { CommentInputComponent } from './components/comment-section/comment-input/comment-input.component';
 
 @NgModule({
   declarations: [
@@ -16,10 +19,12 @@ import { FooterComponent } from './components/footer/footer.component';
     HomepageComponent,
     MusicianListComponent,
     MusicianComponent,
-    MusiciansComponent,
     FooterComponent,
+    CommentSectionComponent,
+    CommentOutputComponent,
+    CommentInputComponent,
   ],
-  imports: [BrowserModule],
+  imports: [BrowserModule, FormsModule],
   providers: [],
   bootstrap: [AppComponent],
 })

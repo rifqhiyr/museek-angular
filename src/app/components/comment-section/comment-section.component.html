@@ -1,0 +1,13 @@
+<div class="container-fluid shadow-sm mb-5 mt-5">
+  <div class="row">
+    <div class="col-12 col-md-12 mt-2 mb-4">
+      <app-comment-input
+        (commentSubmited)="onCommentSubmit($event)"
+      ></app-comment-input>
+      <app-comment-output
+        *ngFor="let comment of comments"
+        [commentOutput]="comment"
+      ></app-comment-output>
+    </div>
+  </div>
+</div>
