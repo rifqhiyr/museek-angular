@@ -11,6 +11,7 @@ import { FooterComponent } from './components/footer/footer.component';
 import { CommentSectionComponent } from './components/comment-section/comment-section.component';
 import { CommentOutputComponent } from './components/comment-section/comment-output/comment-output.component';
 import { CommentInputComponent } from './components/comment-section/comment-input/comment-input.component';
+import { MusicianDetailComponent } from './components/musician-list/musician/musician-detail/musician-detail.component';
 
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import { CommentInputComponent } from './components/comment-section/comment-inpu
     CommentSectionComponent,
     CommentOutputComponent,
     CommentInputComponent,
+    MusicianDetailComponent,
   ],
   imports: [BrowserModule, FormsModule],
   providers: [],

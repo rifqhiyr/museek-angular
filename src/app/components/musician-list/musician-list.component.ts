@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Musician } from './musician/musician.model';
 
 @Component({
   selector: 'app-musician-list',
@@ -6,7 +7,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./musician-list.component.css'],
 })
 export class MusicianListComponent implements OnInit {
-  constructor() {}
+  musicianCount = Musician.length;
 
-  ngOnInit(): void {}
+  constructor() { }
+
+  ngOnInit(): void { }
 }

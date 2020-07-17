@@ -1,26 +1,8 @@
 <div class="container">
-  <div class="row row-cols-1 row-cols-md-4 clearfix">
-    <div class="col mb-4 mt-4" *ngFor="let musician of musicians">
-      <a
-        href="/"
-        class="card h-100 shadow-sm text-center text-decoration-none"
-        style="color: black;"
-      >
-        <img
-          src="{{ musician.imagePath }}"
-          class="card-img-top"
-          alt="{{ musician.name }}"
-        />
-        <div class="card-body">
-          <h5 class="card-title font-weight-bolder">{{ musician.name }}</h5>
-          <p class="card-text font-weight-bold">
-            {{ musician.description }}
-          </p>
-        </div>
-        <footer class="mb-2 font-italic">
-          {{ musician.genre }}
-        </footer>
-      </a>
-    </div>
+  <div class="row row-cols-1 row-cols-md-4">
+    <app-musician-detail
+      *ngFor="let musician of musicians"
+      [musicianDetail]="musician"
+    ></app-musician-detail>
   </div>
 </div>
