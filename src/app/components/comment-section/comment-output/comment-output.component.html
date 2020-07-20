@@ -1,27 +1,20 @@
 <div class="media mt-2 mb-2">
   <img
-    src="../../../assets/images/be1.jpeg"
+    [src]="comment.userImage"
     class="mr-3 rounded"
-    alt="..."
+    alt="{{ comment.userName }}"
     style="max-width: 50px;"
   />
   <div class="media-body">
-    <h5 class="mt-0">Jhon Doe</h5>
+    <h5 class="mt-0">{{ comment.userName }}</h5>
     {{ comment.userComment }}
 
     <div class="d-flex justify-content-end">
-      <div class="badge mr-2" role="button">
-        <i
-          (click)="onClick()"
-          [ngStyle]="{ color: like === true ? 'red' : 'grey' }"
-          class="fa fa-heart"
-        ></i>
-      </div>
       <a
         class="badge badge-light"
         role="button"
         data-toggle="collapse"
-        data-target="#collapseExample"
+        [attr.data-target]="'#collapseExample' + comment.userId"
         aria-expanded="false"
         aria-controls="collapseExample"
       >
@@ -29,21 +22,18 @@
       </a>
     </div>
 
-    <div class="media mt-3 collapse" id="collapseExample">
+    <div class="media mt-3 collapse" [id]="'collapseExample' + comment.userId">
       <a class="mr-3" href="#">
         <img
-          src="../../../assets/images/fe1.jpg"
+          [src]="comment.userImage"
           class="mr-3 rounded"
-          alt="..."
+          alt=""
           style="max-width: 50px;"
         />
       </a>
       <div class="media-body">
-        <h5 class="mt-0">Jhon Doe</h5>
-        Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque
-        ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus
-        viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla.
-        Donec lacinia congue felis in faucibus.
+        <h5 class="mt-0">Jhon doe</h5>
+        hi too
       </div>
     </div>
   </div>

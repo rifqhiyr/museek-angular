@@ -12,6 +12,8 @@ import { CommentSectionComponent } from './components/comment-section/comment-se
 import { CommentOutputComponent } from './components/comment-section/comment-output/comment-output.component';
 import { CommentInputComponent } from './components/comment-section/comment-input/comment-input.component';
 import { MusicianDetailComponent } from './components/musician-list/musician/musician-detail/musician-detail.component';
+import { ProfileComponent } from './components/profile/profile.component';
+
 
 @NgModule({
   declarations: [
@@ -25,9 +27,10 @@ import { MusicianDetailComponent } from './components/musician-list/musician/mus
     CommentOutputComponent,
     CommentInputComponent,
     MusicianDetailComponent,
+    ProfileComponent,
   ],
   imports: [BrowserModule, FormsModule],
   providers: [],
   bootstrap: [AppComponent],
 })
-export class AppModule {}
+export class AppModule { }

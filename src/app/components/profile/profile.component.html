@@ -1,0 +1,161 @@
+<div class="container">
+  <form>
+    <fieldset>
+      <div class="row">
+        <div class="col-12 col-md-4 text-center">
+          <div class="card" style="max-width: 350px;">
+            <img
+              class="img-fluid rounded"
+              src="../../../assets/images/be2.jpg"
+              alt=""
+            />
+          </div>
+          <div class="card">
+            <div class="card-body">
+              <h3>RIfqi Yuliandri</h3>
+              <p class="text-muted">musician</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-md-8">
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item">
+              <i class="fa fa-user"></i><span class="text-muted"> Name</span>
+              <p
+                [ngStyle]="{
+                  display: inputDisplay === false ? 'block' : 'none'
+                }"
+              >
+                Rifqi Yuliandri
+              </p>
+              <div
+                [ngStyle]="{
+                  display: inputDisplay === true ? 'block' : 'none'
+                }"
+              >
+                <input type="text" name="username" placeholder="edit here..." />
+              </div>
+            </li>
+            <li class="list-group-item">
+              <i class="fa fa-envelope"></i
+              ><span class="text-muted"> Email</span>
+              <p
+                [ngStyle]="{
+                  display: inputDisplay === false ? 'block' : 'none'
+                }"
+              >
+                Rifqhiyr@gmail.com
+              </p>
+              <div
+                [ngStyle]="{
+                  display: inputDisplay === true ? 'block' : 'none'
+                }"
+              >
+                <input type="email" name="email" placeholder="edit here..." />
+              </div>
+            </li>
+            <li class="list-group-item">
+              <i class="fa fa-venus-mars"></i
+              ><span class="text-muted"> Gender</span>
+              <p
+                [ngStyle]="{
+                  display: inputDisplay === false ? 'block' : 'none'
+                }"
+              >
+                Male
+              </p>
+              <div
+                [ngStyle]="{
+                  display: inputDisplay === true ? 'block' : 'none'
+                }"
+              >
+                <input type="text" name="gender" placeholder="edit here..." />
+              </div>
+            </li>
+            <li class="list-group-item">
+              <i class="fa fa-map-marker"></i
+              ><span class="text-muted"> address</span>
+              <p
+                [ngStyle]="{
+                  display: inputDisplay === false ? 'block' : 'none'
+                }"
+              >
+                Jagakarsa St.
+              </p>
+              <div
+                [ngStyle]="{
+                  display: inputDisplay === true ? 'block' : 'none'
+                }"
+              >
+                <input type="text" name="address" placeholder="edit here..." />
+              </div>
+            </li>
+            <li class="list-group-item">
+              <i class="fa fa-building"></i
+              ><span class="text-muted"> City</span>
+              <p
+                [ngStyle]="{
+                  display: inputDisplay === false ? 'block' : 'none'
+                }"
+              >
+                Jakarta
+              </p>
+              <div
+                [ngStyle]="{
+                  display: inputDisplay === true ? 'block' : 'none'
+                }"
+              >
+                <input type="text" name="city" placeholder="edit here..." />
+              </div>
+            </li>
+            <li class="list-group-item">
+              <i class="fa fa-globe"></i
+              ><span class="text-muted"> Country</span>
+              <p
+                [ngStyle]="{
+                  display: inputDisplay === false ? 'block' : 'none'
+                }"
+              >
+                Indonesia
+              </p>
+              <div
+                [ngStyle]="{
+                  display: inputDisplay === true ? 'block' : 'none'
+                }"
+              >
+                <input type="text" name="country" placeholder="edit here..." />
+              </div>
+            </li>
+            <li class="list-group-item">
+              <i class="fa fa-music"><span class="text-muted"> genre</span></i>
+              <p
+                [ngStyle]="{
+                  display: inputDisplay === false ? 'block' : 'none'
+                }"
+              >
+                Jazz Pop Metal
+              </p>
+              <div
+                [ngStyle]="{
+                  display: inputDisplay === true ? 'block' : 'none'
+                }"
+              >
+                <input type="text" name="genre" placeholder="edit here..." />
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="row row-cols-1">
+        <div class="d-flex justify-content-end">
+          <button class="btn btn-outline-warning" (click)="onEdit()">
+            Edit
+          </button>
+          <button class="btn btn-outline-primary" (click)="onSave()">
+            Save
+          </button>
+        </div>
+      </div>
+    </fieldset>
+  </form>
+</div>

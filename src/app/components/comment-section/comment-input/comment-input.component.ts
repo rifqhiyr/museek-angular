@@ -18,9 +18,9 @@ export class CommentInputComponent implements OnInit {
 
   @ViewChild('commentInput') commentInput: ElementRef;
 
-  constructor() {}
+  constructor() { }
 
-  ngOnInit(): void {}
+  ngOnInit(): void { }
 
   onClickSubmit() {
     this.commentSubmited.emit({

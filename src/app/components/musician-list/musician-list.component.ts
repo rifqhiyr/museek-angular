@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Musician } from './musician/musician.model';
+import { Musician } from "./musician/musician.model"
 
 @Component({
   selector: 'app-musician-list',

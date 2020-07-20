@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output } from '@angular/core';
 
 @Component({
   selector: 'app-comment-output',
@@ -6,14 +6,16 @@ import { Component, OnInit, Input } from '@angular/core';
   styleUrls: ['./comment-output.component.css'],
 })
 export class CommentOutputComponent implements OnInit {
-  like = false;
-  @Input('commentOutput') comment: { userComment: string };
+  collapse = false;
+  likesColor = false;
+  @Input('commentOutput') comment: { userId: number, userName: string, userComment: string, userImage: string };
 
   onClick() {
-    this.like = !this.like;
+    this.likesColor = !this.likesColor
+
   }
 
-  constructor() {}
+  constructor() { }
 
-  ngOnInit(): void {}
+  ngOnInit(): void { }
 }
