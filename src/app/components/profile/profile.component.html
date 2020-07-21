@@ -1,6 +1,6 @@
 <div class="container">
   <form>
-    <fieldset>
+    <fieldset class="form-group">
       <div class="row">
         <div class="col-12 col-md-4 text-center">
           <div class="card" style="max-width: 350px;">
@@ -21,127 +21,95 @@
           <ul class="list-group list-group-flush">
             <li class="list-group-item">
               <i class="fa fa-user"></i><span class="text-muted"> Name</span>
-              <p
-                [ngStyle]="{
-                  display: inputDisplay === false ? 'block' : 'none'
-                }"
-              >
-                Rifqi Yuliandri
-              </p>
-              <div
-                [ngStyle]="{
-                  display: inputDisplay === true ? 'block' : 'none'
-                }"
-              >
-                <input type="text" name="username" placeholder="edit here..." />
-              </div>
+              <p>Rifqi Yuliandri</p>
+              <input
+                *ngIf="inputDisplay === true"
+                type="tel"
+                name="name"
+                placeholder="edit here..."
+              />
             </li>
             <li class="list-group-item">
               <i class="fa fa-envelope"></i
               ><span class="text-muted"> Email</span>
-              <p
-                [ngStyle]="{
-                  display: inputDisplay === false ? 'block' : 'none'
-                }"
-              >
-                Rifqhiyr@gmail.com
-              </p>
-              <div
-                [ngStyle]="{
-                  display: inputDisplay === true ? 'block' : 'none'
-                }"
-              >
-                <input type="email" name="email" placeholder="edit here..." />
-              </div>
+              <p>Rifqhiyr@gmail.com</p>
+              <input
+                *ngIf="inputDisplay === true"
+                type="email"
+                name="email"
+                placeholder="edit here..."
+              />
             </li>
             <li class="list-group-item">
               <i class="fa fa-venus-mars"></i
               ><span class="text-muted"> Gender</span>
-              <p
-                [ngStyle]="{
-                  display: inputDisplay === false ? 'block' : 'none'
-                }"
-              >
-                Male
-              </p>
+              <p>Male</p>
               <div
-                [ngStyle]="{
-                  display: inputDisplay === true ? 'block' : 'none'
-                }"
+                *ngIf="inputDisplay === true"
+                class="form-check form-check-inline"
               >
-                <input type="text" name="gender" placeholder="edit here..." />
+                <input
+                  class="form-check-input"
+                  type="radio"
+                  name="gender"
+                  id="male"
+                  value="male"
+                />
+                <label class="form-check-label mr-2" for="gridRadios1"
+                  >male</label
+                >
+                <input
+                  class="form-check-input"
+                  type="radio"
+                  name="gender"
+                  id="female"
+                  value="female"
+                />
+                <label class="form-check-label" for="female">female</label>
               </div>
             </li>
             <li class="list-group-item">
               <i class="fa fa-map-marker"></i
               ><span class="text-muted"> address</span>
-              <p
-                [ngStyle]="{
-                  display: inputDisplay === false ? 'block' : 'none'
-                }"
-              >
-                Jagakarsa St.
-              </p>
-              <div
-                [ngStyle]="{
-                  display: inputDisplay === true ? 'block' : 'none'
-                }"
-              >
-                <input type="text" name="address" placeholder="edit here..." />
-              </div>
+              <p>Jagakarsa St.</p>
+              <input
+                *ngIf="inputDisplay === true"
+                type="text"
+                name="address"
+                placeholder="edit here..."
+              />
             </li>
             <li class="list-group-item">
               <i class="fa fa-building"></i
               ><span class="text-muted"> City</span>
-              <p
-                [ngStyle]="{
-                  display: inputDisplay === false ? 'block' : 'none'
-                }"
-              >
-                Jakarta
-              </p>
-              <div
-                [ngStyle]="{
-                  display: inputDisplay === true ? 'block' : 'none'
-                }"
-              >
-                <input type="text" name="city" placeholder="edit here..." />
-              </div>
+              <p>Jakarta</p>
+              <input
+                *ngIf="inputDisplay === true"
+                type="text"
+                name="city"
+                placeholder="edit here..."
+              />
             </li>
             <li class="list-group-item">
               <i class="fa fa-globe"></i
               ><span class="text-muted"> Country</span>
-              <p
-                [ngStyle]="{
-                  display: inputDisplay === false ? 'block' : 'none'
-                }"
-              >
-                Indonesia
-              </p>
-              <div
-                [ngStyle]="{
-                  display: inputDisplay === true ? 'block' : 'none'
-                }"
-              >
-                <input type="text" name="country" placeholder="edit here..." />
-              </div>
+              <p>Indonesia</p>
+              <input
+                *ngIf="inputDisplay === true"
+                type="text"
+                name="country"
+                placeholder="edit here..."
+              />
             </li>
             <li class="list-group-item">
               <i class="fa fa-music"><span class="text-muted"> genre</span></i>
-              <p
-                [ngStyle]="{
-                  display: inputDisplay === false ? 'block' : 'none'
-                }"
-              >
-                Jazz Pop Metal
-              </p>
-              <div
-                [ngStyle]="{
-                  display: inputDisplay === true ? 'block' : 'none'
-                }"
-              >
-                <input type="text" name="genre" placeholder="edit here..." />
-              </div>
+              <p>Jazz Pop Metal</p>
+              <input
+                *ngIf="inputDisplay === true"
+                type="text"
+                name="genre"
+                placeholder="edit here..."
+              />
             </li>
           </ul>
         </div>
@@ -151,7 +119,11 @@
           <button class="btn btn-outline-warning" (click)="onEdit()">
             Edit
           </button>
-          <button class="btn btn-outline-primary" (click)="onSave()">
+          <button
+            class="btn btn-outline-primary"
+            [disabled]="!inputDisplay"
+            (click)="onSave()"
+          >
             Save
           </button>
         </div>

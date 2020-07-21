@@ -18,5 +18,10 @@ button {
 input {
   border: none;
   outline: none;
-  width: 100% !important;
+  width: auto;
+}
+
+input[type="email"] {
+  transition: width 0.4s ease-in-out;
+  width: 100%;
 }
