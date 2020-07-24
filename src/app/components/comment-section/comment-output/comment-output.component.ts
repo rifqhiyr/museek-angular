@@ -1,4 +1,5 @@
 import { Component, OnInit, Input, Output } from '@angular/core';
+import { Comment } from 'src/app/models/comment.model';
 
 @Component({
   selector: 'app-comment-output',
@@ -8,14 +9,13 @@ import { Component, OnInit, Input, Output } from '@angular/core';
 export class CommentOutputComponent implements OnInit {
   collapse = false;
   likesColor = false;
-  @Input('commentOutput') comment: { userId: number, userName: string, userComment: string, userImage: string };
+  @Input('cOutput') comment: Comment;
 
   onClick() {
-    this.likesColor = !this.likesColor
-
+    this.likesColor = !this.likesColor;
   }
 
-  constructor() { }
+  constructor() {}
 
-  ngOnInit(): void { }
+  ngOnInit(): void {}
 }

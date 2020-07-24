@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Musician } from "./musician/musician.model"
+import { AccountService } from 'src/app/services/account.service';
 
 @Component({
   selector: 'app-musician-list',
@@ -7,9 +7,11 @@ import { Musician } from "./musician/musician.model"
   styleUrls: ['./musician-list.component.css'],
 })
 export class MusicianListComponent implements OnInit {
-  musicianCount = Musician.length;
+  musicianCount: number;
 
-  constructor() { }
+  constructor(private accountService: AccountService) {}
 
-  ngOnInit(): void { }
+  ngOnInit(): void {
+    this.musicianCount = this.accountService.getMusician().length;
+  }
 }

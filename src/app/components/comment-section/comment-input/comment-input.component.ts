@@ -6,6 +6,7 @@ import {
   ViewChild,
   ElementRef,
 } from '@angular/core';
+import { CommentService } from 'src/app/services/comment.service';
 
 @Component({
   selector: 'app-comment-input',
@@ -18,9 +19,9 @@ export class CommentInputComponent implements OnInit {
 
   @ViewChild('commentInput') commentInput: ElementRef;
 
-  constructor() { }
+  constructor(private commentService: CommentService) {}
 
-  ngOnInit(): void { }
+  ngOnInit(): void {}
 
   onClickSubmit() {
     this.commentSubmited.emit({

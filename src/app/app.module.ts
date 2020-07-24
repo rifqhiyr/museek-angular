@@ -13,6 +13,8 @@ import { CommentOutputComponent } from './components/comment-section/comment-out
 import { CommentInputComponent } from './components/comment-section/comment-input/comment-input.component';
 import { MusicianDetailComponent } from './components/musician-list/musician/musician-detail/musician-detail.component';
 import { ProfileComponent } from './components/profile/profile.component';
+import { CostumerProfileComponent } from './components/profile/costumer-profile/costumer-profile.component';
+import { MusicianProfileComponent } from './components/profile/musician-profile/musician-profile.component';
 
 
 @NgModule({
@@ -28,6 +30,8 @@ import { ProfileComponent } from './components/profile/profile.component';
     CommentInputComponent,
     MusicianDetailComponent,
     ProfileComponent,
+    CostumerProfileComponent,
+    MusicianProfileComponent,
   ],
   imports: [BrowserModule, FormsModule],
   providers: [],

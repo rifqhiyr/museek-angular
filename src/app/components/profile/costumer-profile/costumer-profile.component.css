@@ -1,0 +1,44 @@
+.row {
+  margin: 1rem 0 4rem;
+}
+
+.card {
+  margin: 2rem 0;
+}
+
+ul {
+  margin: 1rem 0;
+}
+
+button {
+  width: 150px;
+  margin-right: 1rem;
+}
+
+.form-check {
+  margin-left: 1.2rem;
+}
+input {
+  margin-left: 1.2rem;
+  border: none;
+  outline: none;
+  width: auto;
+}
+
+input[type="email"] {
+  width: 100%;
+}
+
+input:disabled {
+  background-color: transparent;
+}
+
+textarea {
+  margin-left: 1.2rem;
+  border: none;
+  width: 100%;
+  outline: none;
+}
+textarea:disabled {
+  background-color: transparent;
+}

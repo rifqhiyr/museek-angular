@@ -7,7 +7,7 @@
     style="color: black; max-height: 350px;"
   >
     <img
-      src="{{ musician.imagePath }}"
+      src="{{ musician.imgPath }}"
       class="card-img-top"
       alt="{{ musician.name }}"
     />
@@ -18,7 +18,7 @@
       </p>
     </div>
     <footer class="mb-2 font-italic">
-      {{ musician.location }}
+      {{ musician.address }} {{ musician.city }} {{ musician.country }}
     </footer>
     <div
       class="modal fade"
