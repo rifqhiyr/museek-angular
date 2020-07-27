@@ -13,11 +13,11 @@ export class ProfileComponent implements OnInit {
   musiciansProfile: Musician[];
   costumersProfile: Costumer[];
 
-  constructor(private accountService: AccountService) {}
+  constructor(private accountService: AccountService) { }
 
   ngOnInit() {
-    this.musiciansProfile = this.accountService.getMusician();
-    this.costumersProfile = this.accountService.getCostumer();
+    this.musiciansProfile = this.accountService.getMusicians();
+    this.costumersProfile = this.accountService.getCostumers();
   }
 
   onEdit() {

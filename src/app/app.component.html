@@ -1,6 +1,8 @@
-<app-header (pageSelected)="onNavigate($event)"></app-header>
-<app-homepage *ngIf="loadedPage === 'homepage'"></app-homepage>
-<app-musician-list *ngIf="loadedPage === 'musician-list'"></app-musician-list>
-<app-event *ngIf="loadedPage === 'event'"></app-event>
-<app-profile *ngIf="loadedPage === 'profile'"></app-profile>
+<app-header></app-header>
+<!-- <app-homepage *ngIf="loadedPage === 'homepage'"></app-homepage> -->
+<!-- <app-musician-list *ngIf="loadedPage === 'musician-list'"></app-musician-list> -->
+<!-- <app-event *ngIf="loadedPage === 'event'"></app-event> -->
+<!-- <app-profile *ngIf="loadedPage === 'profile'"></app-profile> -->
+<!-- <app-event></app-event> -->
+<router-outlet></router-outlet>
 <app-footer></app-footer>

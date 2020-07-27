@@ -2,12 +2,12 @@
   <div
     role="button"
     data-toggle="modal"
-    [attr.data-target]="'#staticBackdrop' + musician.id"
+    data-target="#staticBackdrop"
     class="card shadow-sm text-center text-decoration-none"
     style="color: black; max-height: 350px;"
   >
     <img
-      src="{{ musician.imgPath }}"
+      [src]="musician.imgPath"
       class="card-img-top"
       alt="{{ musician.name }}"
     />
@@ -18,11 +18,11 @@
       </p>
     </div>
     <footer class="mb-2 font-italic">
-      {{ musician.address }} {{ musician.city }} {{ musician.country }}
+      {{ musician.country }}
     </footer>
     <div
       class="modal fade"
-      [id]="'staticBackdrop' + musician.id"
+      id="staticBackdrop"
       data-backdrop="static"
       data-keyboard="false"
       tabindex="-1"
@@ -56,7 +56,7 @@
             >
               nope
             </button>
-            <button type="button" class="btn btn-primary">
+            <button type="button" class="btn btn-primary" (click)="onBook()">
               book now
             </button>
           </div>

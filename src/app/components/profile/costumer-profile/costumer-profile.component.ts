@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Costumer } from 'src/app/models/costumer.model';
+import { CostumerService } from 'src/app/services/costumer.service';
 
 @Component({
   selector: 'app-costumer-profile',
@@ -8,8 +9,9 @@ import { Costumer } from 'src/app/models/costumer.model';
 })
 export class CostumerProfileComponent implements OnInit {
   @Input('cProfile') costumerProfile: Costumer;
+  @Input() value: string;
 
-  constructor() {}
+  constructor(private costumerService: CostumerService) { }
 
-  ngOnInit(): void {}
+  ngOnInit(): void { }
 }

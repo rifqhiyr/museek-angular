@@ -1,5 +1,5 @@
 <div class="navbar navbar-expand-xl navbar-light bg-white shadow-sm sticky-top">
-  <a class="navbar-brand" href="#" (click)="onSelect('homepage')"
+  <a class="navbar-brand" routerLink="/"
     ><img
       style="max-width: 130px;"
       src="../../../assets/images/logo.png"
@@ -19,21 +19,23 @@
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav ml-auto">
-      <li class="nav-item">
-        <a class="nav-link" href="#" (click)="onSelect('homepage')"
+      <li
+        class="nav-item"
+        routerLinkActive="active"
+        [routerLinkActiveOptions]="{ exact: true }"
+      >
+        <a class="nav-link" routerLink="/"
           >Home <span class="sr-only">(current)</span></a
         >
       </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#" (click)="onSelect('musician-list')"
-          >Musicians</a
-        >
+      <li class="nav-item" routerLinkActive="active">
+        <a class="nav-link" [routerLink]="['/musician-list']">Musicians</a>
       </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#" (click)="onSelect('profile')">Profile</a>
+      <li class="nav-item" routerLinkActive="active">
+        <a class="nav-link" [routerLink]="['/profile']">Profile</a>
       </li>
       <li class="nav-item mr-lg-3">
-        <a class="nav-link" href="#" (click)="onSelect('event')">Event</a>
+        <a class="nav-link" [routerLink]="['event']">Event</a>
       </li>
     </ul>
     <form class="form-inline my-2 my-lg-0 d-flex justify-content-between">

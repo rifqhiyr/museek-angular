@@ -1,6 +1,8 @@
 import { BrowserModule } from '@angular/platform-browser';
+
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { Routes, RouterModule } from '@angular/router';
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
@@ -17,6 +19,15 @@ import { BookingInputComponent } from './components/booking-form/booking-input/b
 import { BookingOutputComponent } from './components/booking-form/booking-output/booking-output.component';
 import { EventComponent } from './components/event/event.component';
 
+
+const appRoutes: Routes = [
+  { path: '', component: HomepageComponent },
+  { path: 'musician-list', component: MusicianListComponent },
+  { path: 'musician-list/book-form', component: BookingFormComponent },
+  { path: 'profile', component: ProfileComponent },
+  { path: 'profile/:id/edit', component: ProfileComponent },
+  { path: 'event', component: EventComponent }
+]
 
 @NgModule({
   declarations: [
@@ -35,7 +46,7 @@ import { EventComponent } from './components/event/event.component';
     BookingOutputComponent,
     EventComponent,
   ],
-  imports: [BrowserModule, FormsModule],
+  imports: [BrowserModule, FormsModule, RouterModule.forRoot(appRoutes)],
   providers: [],
   bootstrap: [AppComponent],
 })

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AccountService } from 'src/app/services/account.service';
+import { Musician } from 'src/app/models/musician.model';
 
 @Component({
   selector: 'app-musician-list',
@@ -7,11 +8,13 @@ import { AccountService } from 'src/app/services/account.service';
   styleUrls: ['./musician-list.component.css'],
 })
 export class MusicianListComponent implements OnInit {
-  musicianCount: number;
+  musicianCount;
+  public musicians: Musician[] = []
 
-  constructor(private accountService: AccountService) {}
+
+  constructor(private accountService: AccountService) { }
 
   ngOnInit(): void {
-    this.musicianCount = this.accountService.getMusician().length;
+    this.musicians = this.accountService.getMusicians()
   }
 }

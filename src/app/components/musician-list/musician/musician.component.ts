@@ -1,6 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { AccountService } from 'src/app/services/account.service';
 import { Musician } from 'src/app/models/musician.model';
+import { MusicianService } from 'src/app/services/musician.service';
 
 @Component({
   selector: 'app-musician',
@@ -8,11 +9,13 @@ import { Musician } from 'src/app/models/musician.model';
   styleUrls: ['./musician.component.css'],
 })
 export class MusicianComponent implements OnInit {
-  @Input() musicians: Musician[];
+  @Input() musician: Musician;
+  @Input() id: number;
 
-  constructor(private accountService: AccountService) {}
+  constructor(private musicianService: MusicianService) { }
 
   ngOnInit(): void {
-    this.musicians = this.accountService.getMusician();
+
   }
+  onBook() { }
 }

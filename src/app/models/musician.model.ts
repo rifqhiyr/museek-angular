@@ -1,7 +1,6 @@
 export class Musician {
   constructor(
     public id: number,
-    public role: string,
     public email: string,
     public password: string,
     public name: string,
@@ -13,5 +12,5 @@ export class Musician {
     public description: string,
     public genre: Array<string>,
     public imgPath: string
-  ) {}
+  ) { }
 }
