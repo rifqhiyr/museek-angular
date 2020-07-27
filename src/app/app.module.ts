@@ -8,13 +8,14 @@ import { HomepageComponent } from './components/homepage/homepage.component';
 import { MusicianListComponent } from './components/musician-list/musician-list.component';
 import { MusicianComponent } from './components/musician-list/musician/musician.component';
 import { FooterComponent } from './components/footer/footer.component';
-import { CommentSectionComponent } from './components/comment-section/comment-section.component';
-import { CommentOutputComponent } from './components/comment-section/comment-output/comment-output.component';
-import { CommentInputComponent } from './components/comment-section/comment-input/comment-input.component';
 import { MusicianDetailComponent } from './components/musician-list/musician/musician-detail/musician-detail.component';
 import { ProfileComponent } from './components/profile/profile.component';
 import { CostumerProfileComponent } from './components/profile/costumer-profile/costumer-profile.component';
 import { MusicianProfileComponent } from './components/profile/musician-profile/musician-profile.component';
+import { BookingFormComponent } from './components/booking-form/booking-form.component';
+import { BookingInputComponent } from './components/booking-form/booking-input/booking-input.component';
+import { BookingOutputComponent } from './components/booking-form/booking-output/booking-output.component';
+import { EventComponent } from './components/event/event.component';
 
 
 @NgModule({
@@ -25,13 +26,14 @@ import { MusicianProfileComponent } from './components/profile/musician-profile/
     MusicianListComponent,
     MusicianComponent,
     FooterComponent,
-    CommentSectionComponent,
-    CommentOutputComponent,
-    CommentInputComponent,
     MusicianDetailComponent,
     ProfileComponent,
     CostumerProfileComponent,
     MusicianProfileComponent,
+    BookingFormComponent,
+    BookingInputComponent,
+    BookingOutputComponent,
+    EventComponent,
   ],
   imports: [BrowserModule, FormsModule],
   providers: [],
