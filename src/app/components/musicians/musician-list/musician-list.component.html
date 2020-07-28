@@ -1,0 +1,7 @@
+<div class="row row-cols-1 row-cols-md-3 text-center" style="margin-top: 3rem;">
+  <app-musician
+    *ngFor="let musician of musicians; let i = index"
+    [musician]="musician"
+    [index]="i"
+  ></app-musician>
+</div>

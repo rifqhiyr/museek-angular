@@ -1,0 +1,17 @@
+<div class="card mb-3 shadow text-center">
+  <img [src]="musician.imgPath" class="card-img" alt="{{ musician.name }}" />
+  <div class="card-body">
+    <h5 class="card-title">{{ musician.genre }}</h5>
+    <p class="card-text">
+      {{ musician.description }}
+    </p>
+    <p class="card-text">Rp. {{ musician.price }}</p>
+    <p class="card-text">
+      <small class="text-muted"
+        >{{ musician.address }}, {{ musician.city }},
+        {{ musician.country }}</small
+      >
+    </p>
+    <button class="btn btn-outline-primary" (click)="onBook()">booking</button>
+  </div>
+</div>

@@ -8,9 +8,7 @@ import { Musician } from 'src/app/models/musician.model';
   styleUrls: ['./musician-list.component.css'],
 })
 export class MusicianListComponent implements OnInit {
-  public musicians: Musician[] = [];
-
-
+  musicians: Musician[] = [];
 
   constructor(private accountService: AccountService) { }
 

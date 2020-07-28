@@ -1,7 +1,9 @@
 import { Injectable, EventEmitter } from '@angular/core'
 import { Booking } from '../models/booking.modal'
 
-
+@Injectable({
+  providedIn: 'root'
+})
 export class BookingService {
   bookingChanged = new EventEmitter<Booking[]>()
 

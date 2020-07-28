@@ -1,0 +1,18 @@
+<div class="col mb-4">
+  <a
+    class="card h-100 text-decoration-none"
+    style="cursor: pointer;"
+    [routerLink]="[index]"
+    routerLinkActive="Active"
+  >
+    <img
+      [src]="musician.imgPath"
+      class="card-img-top"
+      alt="{{ musician.name }}"
+      style="max-height: 150px;"
+    />
+    <div class="card-body">
+      <h5 class="card-title">{{ musician.name }}</h5>
+    </div>
+  </a>
+</div>

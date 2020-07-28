@@ -1,3 +1,6 @@
-<div class="container">
-  <app-booking-input></app-booking-input>
+<div>
+  <app-booking-input
+    *ngFor="let booking of bookings"
+    [bInput]="booking"
+  ></app-booking-input>
 </div>
