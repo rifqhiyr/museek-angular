@@ -8,8 +8,8 @@ import { Musician } from 'src/app/models/musician.model';
   styleUrls: ['./musician-list.component.css'],
 })
 export class MusicianListComponent implements OnInit {
-  musicianCount;
-  public musicians: Musician[] = []
+  public musicians: Musician[] = [];
+
 
 
   constructor(private accountService: AccountService) { }

@@ -1,28 +1,4 @@
 <div class="container">
-  <form>
-    <fieldset class="form-group" [disabled]="inputDisplay">
-      <!-- <app-musician-profile
-        *ngFor="let musicianProfile of musiciansProfile"
-        [mProfile]="musicianProfile"
-      ></app-musician-profile> -->
-      <app-costumer-profile
-        *ngFor="let costumerProfile of costumersProfile"
-        [cProfile]="costumerProfile"
-      ></app-costumer-profile>
-    </fieldset>
-    <div class="row row-cols-1">
-      <div class="d-flex justify-content-end">
-        <button class="btn btn-warning" (click)="onEdit()">
-          Edit
-        </button>
-        <button
-          class="btn btn-primary"
-          [disabled]="inputDisplay"
-          (click)="onSave()"
-        >
-          Save
-        </button>
-      </div>
-    </div>
-  </form>
+  <app-musician-profile></app-musician-profile>
+  <!-- <app-costumer-profile></app-costumer-profile> -->
 </div>

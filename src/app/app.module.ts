@@ -2,7 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { Routes, RouterModule } from '@angular/router';
+
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
@@ -18,16 +18,10 @@ import { BookingFormComponent } from './components/booking-form/booking-form.com
 import { BookingInputComponent } from './components/booking-form/booking-input/booking-input.component';
 import { BookingOutputComponent } from './components/booking-form/booking-output/booking-output.component';
 import { EventComponent } from './components/event/event.component';
+import { AppRoutingModule } from './app-routing.module';
 
 
-const appRoutes: Routes = [
-  { path: '', component: HomepageComponent },
-  { path: 'musician-list', component: MusicianListComponent },
-  { path: 'musician-list/book-form', component: BookingFormComponent },
-  { path: 'profile', component: ProfileComponent },
-  { path: 'profile/:id/edit', component: ProfileComponent },
-  { path: 'event', component: EventComponent }
-]
+
 
 @NgModule({
   declarations: [
@@ -46,7 +40,7 @@ const appRoutes: Routes = [
     BookingOutputComponent,
     EventComponent,
   ],
-  imports: [BrowserModule, FormsModule, RouterModule.forRoot(appRoutes)],
+  imports: [BrowserModule, FormsModule, AppRoutingModule],
   providers: [],
   bootstrap: [AppComponent],
 })

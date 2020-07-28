@@ -1,7 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { AccountService } from 'src/app/services/account.service';
 import { Musician } from 'src/app/models/musician.model';
-import { MusicianService } from 'src/app/services/musician.service';
 
 @Component({
   selector: 'app-musician',
@@ -9,10 +7,9 @@ import { MusicianService } from 'src/app/services/musician.service';
   styleUrls: ['./musician.component.css'],
 })
 export class MusicianComponent implements OnInit {
-  @Input() musician: Musician;
-  @Input() id: number;
+  @Input() musician: Musician
 
-  constructor(private musicianService: MusicianService) { }
+  constructor() { }
 
   ngOnInit(): void {
 
