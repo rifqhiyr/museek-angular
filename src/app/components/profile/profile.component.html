@@ -1,4 +1,8 @@
 <div class="container">
-  <app-musician-profile></app-musician-profile>
-  <!-- <app-costumer-profile></app-costumer-profile> -->
+  <!-- <app-musician-profile
+    *ngFor="let musicianProfile of musicianProfiles; let i = index"
+    [mProfile]="musicianProfile"
+    [id]="i"
+  ></app-musician-profile> -->
+  <app-costumer-profile></app-costumer-profile>
 </div>

@@ -26,6 +26,6 @@ export class MusicianDetailComponent implements OnInit {
 
 
   onBook() {
-    this.router.navigate(['../', this.id, 'booking'], { relativeTo: this.route })
+
   }
 }

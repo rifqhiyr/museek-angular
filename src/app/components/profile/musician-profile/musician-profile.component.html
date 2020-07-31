@@ -1,120 +1,159 @@
-<form action="">
-  <fieldset class="form-group" [disabled]="inputDisplay">
-    <div class="row">
-      <div class="col-12 col-md-4 text-center">
-        <div class="card">
-          <img
-            class="img-fluid rounded"
-            [src]="musicianProfile.imgPath"
-            alt=""
-          />
-        </div>
-        <div class="card">
-          <div class="card-body">
-            <h3>{{ musicianProfile.name }}</h3>
-            <p class="text-muted">costumer</p>
+<div>
+  <form [formGroup]="musicianForm" (ngsubmit)="onSave()">
+    <fieldset class="form-group" [disabled]="inputDisplay">
+      <div class="row">
+        <div class="col-12 col-md-4 text-center">
+          <div class="card" *ngIf="inputDisplay">
+            <img
+              class="img-fluid rounded"
+              [src]="musicianProfile.imgPath"
+              alt=""
+            />
+          </div>
+          <div class="card" *ngIf="!inputDisplay">
+            <label for="imgPath">Image Url</label>
+            <input
+              type="text"
+              id="imgPath"
+              formControlName="imgPath"
+              #imgPath
+            />
+            <img class="img-fluid rounded" [src]="imgPath.value" />
+          </div>
+          <div class="card">
+            <div class="card-body">
+              <h3>{{ musicianProfile.name }}</h3>
+              <p class="text-muted">musician</p>
+            </div>
           </div>
         </div>
+        <div class="col-12 col-md-8">
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item">
+              <i class="fa fa-user"></i><span class="text-muted"> Name</span>
+              <br />
+              <input
+                type="text"
+                value="{{ musicianProfile.name }}"
+                formControlName="name"
+              />
+            </li>
+            <li class="list-group-item">
+              <i class="fa fa-envelope"></i
+              ><span class="text-muted"> Email</span>
+              <br />
+              <input
+                type="email"
+                formControlName="email"
+                value="{{ musicianProfile.email }}"
+              />
+            </li>
+            <li class="list-group-item">
+              <i class="fa fa-key"></i><span class="text-muted"> Password</span>
+              <br />
+              <input
+                type="password"
+                formControlName="password"
+                value="{{ musicianProfile.password }}"
+              />
+            </li>
+            <li class="list-group-item">
+              <i class="fa fa-money"></i><span class="text-muted"> Price</span>
+              <br />
+              <p>
+                Rp.<input
+                  type="number"
+                  formControlName="price"
+                  [value]="musicianProfile.price"
+                />
+              </p>
+            </li>
+            <li class="list-group-item">
+              <i class="fa fa-venus-mars"></i
+              ><span class="text-muted"> Gender</span>
+              <br />
+              <div class="form-check form-check-inline">
+                <input
+                  class="form-check-input"
+                  type="radio"
+                  name="gender"
+                  id="male"
+                  [value]="musicianProfile.gender"
+                />
+                <label class="form-check-label mr-2" for="male">male</label>
+                <input
+                  class="form-check-input"
+                  type="radio"
+                  name="gender"
+                  id="female"
+                  [value]="musicianProfile.gender"
+                />
+                <label class="form-check-label" for="female">female</label>
+              </div>
+            </li>
+            <li class="list-group-item">
+              <i class="fa fa-map-marker"></i
+              ><span class="text-muted"> Address</span>
+              <br />
+              <input
+                type="text"
+                formControlName="address"
+                value="{{ musicianProfile.address }}"
+              />
+            </li>
+            <li class="list-group-item">
+              <i class="fa fa-building"></i
+              ><span class="text-muted"> City</span>
+              <br />
+              <input
+                type="text"
+                formControlName="city"
+                value="{{ musicianProfile.city }}"
+              />
+            </li>
+            <li class="list-group-item">
+              <i class="fa fa-globe"></i
+              ><span class="text-muted"> Country</span>
+              <br />
+              <input
+                type="text"
+                formControlName="country"
+                value="{{ musicianProfile.country }}"
+              />
+            </li>
+            <li class="list-group-item">
+              <i class="fa fa-music"></i><span class="text-muted"> Genre</span>
+              <br />
+              <input
+                type="text"
+                formArrayName="genre"
+                value="{{ musicianProfile.genre }}"
+              />
+            </li>
+            <li class="list-group-item">
+              <i class="fa fa-comment"></i
+              ><span class="text-muted"> Description</span>
+              <br />
+              <textarea
+                type="text"
+                rows="3"
+                formControlName="description"
+                value="{{ musicianProfile.description }}"
+              ></textarea>
+            </li>
+          </ul>
+        </div>
       </div>
-      <div class="col-12 col-md-8">
-        <ul class="list-group list-group-flush">
-          <li class="list-group-item">
-            <i class="fa fa-user"></i><span class="text-muted"> Name</span>
-            <br />
-            <input type="text" name="name" value="{{ musicianProfile.name }}" />
-          </li>
-          <li class="list-group-item">
-            <i class="fa fa-envelope"></i><span class="text-muted"> Email</span>
-            <br />
-            <input
-              type="email"
-              name="email"
-              value="{{ musicianProfile.email }}"
-            />
-          </li>
-          <li class="list-group-item">
-            <i class="fa fa-key"></i><span class="text-muted"> Password</span>
-            <br />
-            <input
-              type="password"
-              name="password"
-              value="{{ musicianProfile.password }}"
-            />
-          </li>
-          <li class="list-group-item">
-            <i class="fa fa-money"></i><span class="text-muted"> Price</span>
-            <br />
-            <p>
-              Rp.<input
-                type="number"
-                name="price"
-                [value]="musicianProfile.price"
-              />
-            </p>
-          </li>
-          <li class="list-group-item">
-            <i class="fa fa-venus-mars"></i
-            ><span class="text-muted"> Gender</span>
-            <br />
-            <div class="form-check form-check-inline">
-              <input
-                class="form-check-input"
-                type="radio"
-                name="gender"
-                id="male"
-                [value]="musicianProfile.gender"
-              />
-              <label class="form-check-label mr-2" for="male">male</label>
-              <input
-                class="form-check-input"
-                type="radio"
-                name="gender"
-                id="female"
-                [value]="musicianProfile.gender"
-              />
-              <label class="form-check-label" for="female">female</label>
-            </div>
-          </li>
-          <li class="list-group-item">
-            <i class="fa fa-map-marker"></i
-            ><span class="text-muted"> Address</span>
-            <br />
-            <input
-              type="text"
-              name="address"
-              value="{{ musicianProfile.address }}"
-            />
-          </li>
-          <li class="list-group-item">
-            <i class="fa fa-building"></i><span class="text-muted"> City</span>
-            <br />
-            <input type="text" name="city" value="{{ musicianProfile.city }}" />
-          </li>
-          <li class="list-group-item">
-            <i class="fa fa-globe"></i><span class="text-muted"> Country</span>
-            <br />
-            <input
-              type="text"
-              name="country"
-              value="{{ musicianProfile.country }}"
-            />
-          </li>
-        </ul>
+    </fieldset>
+    <div class="row row-cols-1">
+      <div class="d-flex justify-content-end">
+        <button class="btn btn-warning" (click)="onEdit()">
+          Edit
+        </button>
+        <button class="btn btn-primary" [disabled]="inputDisplay">
+          Save
+        </button>
       </div>
     </div>
-  </fieldset>
-  <div class="row row-cols-1">
-    <div class="d-flex justify-content-end">
-      <button class="btn btn-warning" (click)="onEdit()">
-        Edit
-      </button>
-      <button
-        class="btn btn-primary"
-        [disabled]="inputDisplay"
-        (click)="onSave()"
-      >
-        Save
-      </button>
-    </div>
-  </div>
-</form>
+  </form>
+</div>

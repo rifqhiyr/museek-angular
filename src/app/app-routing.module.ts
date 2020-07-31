@@ -22,6 +22,7 @@ const appRoutes: Routes = [
   },
   {
     path: 'profile', component: ProfileComponent, children: [
+      { path: ':id', component: ProfileComponent },
       { path: ':id/edit', component: ProfileComponent }
     ]
   },

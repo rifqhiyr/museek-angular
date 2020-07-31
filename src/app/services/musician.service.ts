@@ -1,13 +1,15 @@
 import { Injectable, EventEmitter } from '@angular/core';
 import { Musician } from '../models/musician.model';
+import { Subject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class MusicianService {
+  musicianChanged = new Subject<Musician[]>()
 
   private musicians: Musician[] = [
-    new Musician(1,
+    new Musician(
       'rifqhiyr@gmail.com',
       '12345678',
       'Rifqi Yuliandri',
@@ -20,7 +22,7 @@ export class MusicianService {
       ['metal'],
       'https://cdn.pixabay.com/photo/2019/01/05/22/39/musician-3916095_960_720.jpg'
     ),
-    new Musician(2,
+    new Musician(
       'jhon.doe@gmail.com',
       '12345678',
       'jhon doe',
@@ -33,7 +35,7 @@ export class MusicianService {
       ['jazz', 'pop', 'metal'],
       'https://cdn.pixabay.com/photo/2019/01/05/22/39/musician-3916095_960_720.jpg'
     ),
-    new Musician(3,
+    new Musician(
       'rifqhiyr@gmail.com',
       '12345678',
       'Jane Doe',
@@ -46,7 +48,7 @@ export class MusicianService {
       ['metal', 'Pop'],
       'https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTG8aGCF47hIswLSTpKfyC6o_1UAL_lE-lhRQ&usqp=CAU'
     ),
-    new Musician(4,
+    new Musician(
       'rifqhiyr@gmail.com',
       '12345678',
       'Jane Doe 2',
@@ -77,24 +79,9 @@ export class MusicianService {
     return this.musicians[index]
   }
 
-  updateMusician(id: number, musicianInfo: Musician) {
-    const musician = this.musicians.find(
-      (m) => {
-        return m.id === id
-      }
-    )
-    if (musician) {
-      musician.name = musicianInfo.name,
-        musician.email = musicianInfo.email,
-        musician.password = musicianInfo.password,
-        musician.price = musicianInfo.price,
-        musician.gender = musicianInfo.gender,
-        musician.address = musicianInfo.address,
-        musician.city = musicianInfo.city,
-        musician.country = musicianInfo.country,
-        musician.genre = musicianInfo.genre,
-        musician.description = musicianInfo.description,
-        musician.imgPath = musicianInfo.imgPath
-    }
+  updateMusician(index: number, newMusician: Musician) {
+    this.musicians[index] = newMusician;
+    this.musicianChanged.next(this.musicians.slice())
   }
+
 }
