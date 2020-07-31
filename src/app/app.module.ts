@@ -20,6 +20,7 @@ import { BookingOutputComponent } from './components/booking-form/booking-output
 import { AppRoutingModule } from './app-routing.module';
 import { MusiciansComponent } from './components/musicians/musicians.component';
 import { MusicianStartComponent } from './components/musicians/musician-start/musician-start.component';
+import { AuthComponent } from './auth/auth.component';
 
 
 
@@ -41,6 +42,7 @@ import { MusicianStartComponent } from './components/musicians/musician-start/mu
     BookingOutputComponent,
     MusiciansComponent,
     MusicianStartComponent,
+    AuthComponent,
   ],
   imports: [BrowserModule, FormsModule, AppRoutingModule, ReactiveFormsModule],
   providers: [],

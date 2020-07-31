@@ -10,7 +10,7 @@ import { FormGroup, FormControl, FormArray, Validators } from '@angular/forms';
   styleUrls: ['./musician-profile.component.css'],
 })
 export class MusicianProfileComponent implements OnInit {
-  inputDisplay = true;
+  inputDisplay = false;
   @Input('mProfile') musicianProfile: Musician;
   @Input() id: number;
 
@@ -60,7 +60,7 @@ export class MusicianProfileComponent implements OnInit {
     let genre = [];
     let description = '';
 
-    if (!this.inputDisplay) {
+    if (this.inputDisplay) {
       const musician = this.musicianService.getMusician(this.id);
       name = musician.name;
       imgPath = musician.imgPath;

@@ -5,7 +5,8 @@
         <div class="card-body">
           <h5 class="card-title">{{ booking.category }}</h5>
           <p class="card-text">
-            <i class="fa fa-calendar"></i> {{ booking.dateEvent }}
+            <i class="fa fa-calendar"></i>
+            {{ booking.dateEvent | date: "fullDate" }}
           </p>
           <p><i class="fa fa-clock-o"></i> {{ booking.duration }} hours</p>
           <p><i class="fa fa-map-marker"></i> {{ booking.location }}</p>

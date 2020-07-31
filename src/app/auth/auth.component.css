@@ -1,0 +1,14 @@
+.modal-body {
+  padding: 2rem 1rem;
+}
+
+h5 {
+  text-align: center;
+  padding-top: 3rem;
+}
+a {
+  color: rgba(0, 0, 0, 0.7);
+}
+a:hover {
+  color: black;
+}
