@@ -1,6 +1,10 @@
-<div>
-  <app-booking-input
-    *ngFor="let booking of bookings"
-    [bInput]="booking"
-  ></app-booking-input>
+<div class="container">
+  <div class="row">
+    <div class="col-md-8">
+      <app-booking-output></app-booking-output>
+    </div>
+    <div class="col-md-4">
+      <app-booking-input></app-booking-input>
+    </div>
+  </div>
 </div>

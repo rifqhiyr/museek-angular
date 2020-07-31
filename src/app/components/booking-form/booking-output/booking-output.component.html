@@ -1,42 +1,24 @@
-<div>
-  <h5>You have Booked 2 Musician !</h5>
-  <div class="media shadow-sm">
-    <img
-      src="../../../../assets/images/be2.jpg"
-      class="align-self-center mr-3 rounded"
-      alt="..."
-      style="max-width: 150px;"
-    />
-    <div class="media-body">
-      <h4 class="mt-0">Top-aligned media</h4>
-      Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque
-      ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus
-      viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec
-      lacinia congue felis in faucibus.
-    </div>
+<div class="container">
+  <div class="row costumer">
+    <a class="col-md-6" *ngFor="let booking of bookings; let i = index">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">{{ booking.category }}</h5>
+          <p class="card-text">
+            <i class="fa fa-calendar"></i> {{ booking.dateEvent }}
+          </p>
+          <p><i class="fa fa-clock-o"></i> {{ booking.duration }} hours</p>
+          <p><i class="fa fa-map-marker"></i> {{ booking.location }}</p>
+          <div class="d-flex justify-content-around">
+            <button class="btn btn-outline-warning" (click)="onSubmit(i)">
+              Edit Booking
+            </button>
+            <button class="btn btn-outline-danger" (click)="onDelete(i)">
+              Delete Booking
+            </button>
+          </div>
+        </div>
+      </div>
+    </a>
   </div>
-</div>
-<div>
-  <h5>You get Booked by 2 User!</h5>
-  <table class="table">
-    <thead>
-      <tr>
-        <th scope="col">#</th>
-        <th scope="col">Date</th>
-        <th scope="col">Status</th>
-        <th scope="col">Action</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <th scope="row">1</th>
-        <td>Mark</td>
-        <td>Otto</td>
-        <td>
-          <span role="button"><i class="fa fa-trash"></i></span>
-          <span role="button"><i class="fa fa-check"> </i></span>
-        </td>
-      </tr>
-    </tbody>
-  </table>
 </div>

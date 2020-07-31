@@ -4,7 +4,7 @@ import { Costumer } from '../models/costumer.model';
 import { MusicianService } from './musician.service';
 import { CostumerService } from './costumer.service';
 import { BookingService } from './booking.service';
-import { Booking } from '../models/booking.modal';
+import { Booking } from '../models/booking.model';
 
 @Injectable({
   providedIn: 'root',

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Booking } from 'src/app/models/booking.model';
 import { BookingService } from 'src/app/services/booking.service';
-import { Booking } from 'src/app/models/booking.modal';
 
 @Component({
   selector: 'app-booking-form',
@@ -8,11 +8,13 @@ import { Booking } from 'src/app/models/booking.modal';
   styleUrls: ['./booking-form.component.css']
 })
 export class BookingFormComponent implements OnInit {
-  bookings: Booking[];
+
   constructor(private bookingService: BookingService) { }
 
   ngOnInit(): void {
-    this.bookings = this.bookingService.getBookings()
+
   }
+
+  onEditBooking() { }
 
 }

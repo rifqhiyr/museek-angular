@@ -1,6 +1,6 @@
-import { Injectable, EventEmitter } from '@angular/core';
+import { Injectable } from '@angular/core';
 import { Costumer } from '../models/costumer.model';
-import { Booking } from '../models/booking.modal';
+
 
 @Injectable({
   providedIn: 'root'
@@ -19,7 +19,7 @@ export class CostumerService {
       'Jakarta',
       'indonesia',
       'https://cdn.pixabay.com/photo/2019/01/05/22/39/musician-3916095_960_720.jpg',
-      [new Booking('birthday', '2', new Date(), 3, 'bandung')]
+
     ),
     new Costumer(
       2,
@@ -31,7 +31,7 @@ export class CostumerService {
       'Jakarta',
       'indonesia',
       'https://cdn.pixabay.com/photo/2019/01/05/22/39/musician-3916095_960_720.jpg',
-      [new Booking('birthday', '1', new Date(), 3, 'bandung')]
+
     ),
   ];
 

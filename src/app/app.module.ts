@@ -17,7 +17,6 @@ import { MusicianProfileComponent } from './components/profile/musician-profile/
 import { BookingFormComponent } from './components/booking-form/booking-form.component';
 import { BookingInputComponent } from './components/booking-form/booking-input/booking-input.component';
 import { BookingOutputComponent } from './components/booking-form/booking-output/booking-output.component';
-import { EventComponent } from './components/event/event.component';
 import { AppRoutingModule } from './app-routing.module';
 import { MusiciansComponent } from './components/musicians/musicians.component';
 import { MusicianStartComponent } from './components/musicians/musician-start/musician-start.component';
@@ -40,7 +39,6 @@ import { MusicianStartComponent } from './components/musicians/musician-start/mu
     BookingFormComponent,
     BookingInputComponent,
     BookingOutputComponent,
-    EventComponent,
     MusiciansComponent,
     MusicianStartComponent,
   ],

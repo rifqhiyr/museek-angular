@@ -71,14 +71,7 @@ export class MusicianService {
     return this.musicians.slice()
   }
 
-  // getMusician(id: number) {
-  //   const musician = this.musicians.find(
-  //     (m) => {
-  //       return m.id === id
-  //     }
-  //   )
-  //   return musician
-  // }
+
 
   getMusician(index: number) {
     return this.musicians[index]

@@ -1,5 +1,3 @@
-import { Booking } from './booking.modal';
-
 export class Costumer {
   constructor(
     public id: number,
@@ -11,6 +9,5 @@ export class Costumer {
     public city: string,
     public country: string,
     public imgPath: string,
-    public bookings: Booking[]
   ) { }
 }
