@@ -8,9 +8,22 @@
 >
   <div class="modal-dialog modal-dialog-centered">
     <div class="modal-content">
-      <h5>{{ isLoginMode ? "Sign-In Form" : "Sign-Up Form" }}</h5>
       <div class="modal-body">
-        <form #authForm="ngForm" (ngSubmit)="(authForm)">
+        <div class="alert alert-danger" *ngIf="error">
+          <p>{{ error }}</p>
+        </div>
+        <div *ngIf="isLoading" style="text-align: center;">
+          <app-loading-spinner></app-loading-spinner>
+          <p>wait a moment</p>
+        </div>
+        <h5 *ngIf="!isLoading">
+          {{ isLoginMode ? "Sign-In Form" : "Sign-Up Form" }}
+        </h5>
+        <form
+          #authForm="ngForm"
+          (ngSubmit)="onSubmit(authForm)"
+          *ngIf="!isLoading"
+        >
           <div class="form-group">
             <label for="email">Email</label>
             <input
@@ -35,19 +48,28 @@
             />
           </div>
           <div class="form-group" *ngIf="!isLoginMode">
-            <label for="role">Register as</label>
+            <p>Register as</p>
             <div class="form-check form-check-inline">
               <input
                 class="form-check-input"
                 type="radio"
-                name="role"
-                id="role"
+                name="costumer"
+                id="costumer"
                 ngModel
               />
-              <label class="form-check-label" for="role">Customer</label>
+              <label class="form-check-label" for="costumer">Customer</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input
+                class="form-check-input"
+                type="radio"
+                name="musician"
+                id="musician"
+                ngModel
+              />
+              <label class="form-check-label" for="musician">Musician</label>
             </div>
           </div>
-
           <div class="modal-footer justify-content-center">
             <button
               type="submit"

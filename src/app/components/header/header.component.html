@@ -29,10 +29,10 @@
         >
       </li>
       <li class="nav-item" routerLinkActive="active">
-        <a class="nav-link" [routerLink]="['/musicians']">Musicians</a>
+        <a class="nav-link" [routerLink]="['musicians']">Musicians</a>
       </li>
       <li class="nav-item" routerLinkActive="active">
-        <a class="nav-link" [routerLink]="['/profile']">Profile</a>
+        <a class="nav-link" [routerLink]="['profile']">Profile</a>
       </li>
       <li class="nav-item mr-lg-3">
         <a class="nav-link" [routerLink]="['event']">Event</a>
@@ -46,6 +46,18 @@
         data-target="#auth"
       >
         sign in
+      </button>
+      <button
+        class="btn btn-outline-success my-2 my-sm-0"
+        (click)="onFetchData()"
+      >
+        fetch
+      </button>
+      <button
+        class="btn btn-outline-success my-2 my-sm-0"
+        (click)="onSaveData()"
+      >
+        save
       </button>
     </form>
   </div>

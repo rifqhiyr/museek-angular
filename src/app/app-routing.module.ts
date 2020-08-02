@@ -6,7 +6,6 @@ import { MusiciansComponent } from './components/musicians/musicians.component'
 import { MusicianStartComponent } from './components/musicians/musician-start/musician-start.component'
 import { MusicianDetailComponent } from './components/musicians/musician-detail/musician-detail.component'
 import { BookingInputComponent } from './components/booking-form/booking-input/booking-input.component'
-import { BookingOutputComponent } from './components/booking-form/booking-output/booking-output.component'
 import { BookingFormComponent } from './components/booking-form/booking-form.component'
 
 
@@ -22,11 +21,10 @@ const appRoutes: Routes = [
   },
   {
     path: 'profile', component: ProfileComponent, children: [
-      { path: ':id', component: ProfileComponent },
       { path: ':id/edit', component: ProfileComponent }
     ]
   },
-  { path: 'event', component: BookingFormComponent }
+  { path: 'event', component: BookingFormComponent },
 ]
 
 

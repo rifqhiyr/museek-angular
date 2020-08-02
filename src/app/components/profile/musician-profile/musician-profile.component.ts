@@ -2,7 +2,7 @@ import { Component, OnInit, Input } from '@angular/core';
 import { Musician } from 'src/app/models/musician.model';
 import { MusicianService } from 'src/app/services/musician.service';
 import { ActivatedRoute, Params, Router } from '@angular/router';
-import { FormGroup, FormControl, FormArray, Validators } from '@angular/forms';
+import { FormGroup, FormControl, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-musician-profile',
@@ -11,7 +11,7 @@ import { FormGroup, FormControl, FormArray, Validators } from '@angular/forms';
 })
 export class MusicianProfileComponent implements OnInit {
   inputDisplay = false;
-  @Input('mProfile') musicianProfile: Musician;
+  @Input() musicianProfiles: Musician[] = [];
   @Input() id: number;
 
   musicianForm: FormGroup;
@@ -21,21 +21,24 @@ export class MusicianProfileComponent implements OnInit {
   ngOnInit() {
     this.route.params.subscribe((params: Params) => {
       this.id = +params['id'];
-      this.musicianProfile = this.musicianService.getMusician(this.id);
+      this.musicianProfiles = this.musicianService.getMusicians();
       this.initForm()
     })
   }
+
+
   onCancel() {
     this, this.router.navigate(['../'], { relativeTo: this.route })
   }
 
-  onDelete(index: number) {
-    (<FormArray>this.musicianForm.get('musicians')).removeAt(index);
-  }
+  // onDelete(index: number) {
+  //   (<FormArray>this.musicianForm.get('musicians')).removeAt(index);
+  // }
 
   onEdit() {
     this.inputDisplay = !this.inputDisplay;
     this.router.navigate(['edit'], { relativeTo: this.route })
+    // this.musicianService.updateMusician(this.id, this.musicianProfiles)
   }
   // still not working
   onSave() {
@@ -45,6 +48,7 @@ export class MusicianProfileComponent implements OnInit {
     } else {
       this.onCancel()
     }
+
   }
 
   private initForm() {

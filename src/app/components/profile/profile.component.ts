@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { AccountService } from 'src/app/services/account.service';
 import { Musician } from 'src/app/models/musician.model';
+import { MusicianService } from 'src/app/services/musician.service';
 
 
 @Component({
@@ -9,13 +9,17 @@ import { Musician } from 'src/app/models/musician.model';
   styleUrls: ['./profile.component.css'],
 })
 export class ProfileComponent implements OnInit {
-  musicianProfiles: Musician[] = []
+  musicianProfiles: Musician[] = [];
 
 
-  constructor(private accountService: AccountService) { }
+  constructor(private musicianService: MusicianService) {
+    this.musicianProfiles = this.musicianService.getMusicians()
+    // console.log(this.musicianProfiles);
+
+  }
 
   ngOnInit() {
-    this.musicianProfiles = this.accountService.getMusicians()
+
 
   }
 
