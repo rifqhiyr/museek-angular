@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { AuthService, AuthResponseData } from '../services/auth.service';
 import { Observable } from 'rxjs';
@@ -15,9 +15,11 @@ export class AuthComponent implements OnInit {
   error = null;
 
 
+  @ViewChild('closeModal') closeModal: ElementRef;
 
 
   constructor(private authService: AuthService, private router: Router) { }
+
 
   ngOnInit(): void {
   }
@@ -46,6 +48,9 @@ export class AuthComponent implements OnInit {
     authObs.subscribe(response => {
       console.log(response);
       this.isLoading = false;
+      this.closeModal.nativeElement.click()
+      this.error = null;
+
     }, errorMessage => {
       console.log(errorMessage);
       this.error = errorMessage;
